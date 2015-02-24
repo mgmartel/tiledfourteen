@@ -1,0 +1,92 @@
+/*
+ Theme Name:   TiledFourteen
+ Theme URI:    http://wp-tiles.com/tiledfourteen/
+ Description:  A Twenty Fourteen child theme for WP Tiles.
+ Author:       Mike Martel of Trenvo.com
+ Author URI:   http://trenvo.com
+ Template:     twentyfourteen
+ Version:      1.0.0
+ Tags:         tiled, wp-tiles, light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  tiledfourteen
+*/
+
+@import url("../twentyfourteen/style.css");
+
+.site, .site-header {
+    max-width: 1600px;
+}
+
+.site-content {
+    /* Makes the full width tiles stretch until the sidebar */
+    position: relative;
+}
+
+.site-content .entry-header,
+.site-content .entry-content,
+.site-content .entry-summary,
+.site-content .entry-meta,
+.page-content,
+.post-navigation,
+.image-navigation,
+.archive-header,
+.page-header,
+.contributor-info,
+.comments-area,
+.site-main .mu_register,
+.widecolumn > h2,
+.widecolumn > form {
+    max-width: 800px;
+}
+
+.header-logo {
+    line-height: 48px;
+}
+.header-logo img {
+    max-height: 48px;
+}
+
+/**
+ * No Sidebars Template
+ */
+.no-sidebars .site:before {
+    display: none;
+}
+.no-sidebars .site-content,
+.no-sidebars .site-main .widecolumn{
+    margin-left: 0;
+}
+
+.no-sidebars .search-box-wrapper,
+.no-sidebars .featured-content {
+    padding-left: 0;
+}
+
+/**
+ * Allow for full screen sections
+ *
+ **/
+/*.site-content {*/
+.hentry {
+    /* Needs to be on hentry, so featured images can have a negative margin-top */
+    overflow: hidden;
+}
+
+.background-section {
+    position: relative;
+    z-index: 2;
+}
+
+.background-section:before {
+    content: "";
+    position: absolute;
+    left: -50%;
+    right: -50%;
+    height: 100%;
+    z-index: -1;
+}
+
+.background-section:after {
+    content: "";
+    display: block;
+    overflow: hidden;
+}
